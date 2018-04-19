@@ -36,7 +36,6 @@ setup(
     url='https://github.com/eht16/python-logstash-async',
     keywords='logging logstash asynchronous',
     install_requires=['limits', 'six'],
-    setup_requires=['flake8'],
     include_package_data=True,
     classifiers=[
         'Development Status :: 4 - Beta',
