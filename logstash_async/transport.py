@@ -9,7 +9,7 @@ import sys
 
 from logstash_async.constants import constants
 
-MAX_UDP_LENGTH = 512
+MAX_UDP_LENGTH = 65507
 
 
 class UdpTransport(object):
