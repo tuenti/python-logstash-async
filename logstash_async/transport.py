@@ -9,6 +9,8 @@ import sys
 
 from logstash_async.constants import constants
 
+MAX_UDP_LENGTH = 512
+
 
 class UdpTransport(object):
 
@@ -47,6 +49,7 @@ class UdpTransport(object):
 
     # ----------------------------------------------------------------------
     def _send_via_socket(self, data):
+        data = data[0:MAX_UDP_LENGTH-1]
         data_to_send = self._convert_data_to_send(data)
         self._sock.sendto(data_to_send, (self._host, self._port))
 
