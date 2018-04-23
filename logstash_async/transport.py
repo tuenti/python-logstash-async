@@ -50,7 +50,7 @@ class UdpTransport(object):
     # ----------------------------------------------------------------------
     def _send_via_socket(self, data):
         if len(data) > MAX_UDP_LENGTH:
-            data = "{\"truncated_msg\": %s}" % data[0:MAX_UDP_LENGTH-20]
+            data = "{\"truncated_msg\": %s}" % data[0:MAX_UDP_LENGTH-50]
         data_to_send = self._convert_data_to_send(data)
         self._sock.sendto(data_to_send, (self._host, self._port))
 
